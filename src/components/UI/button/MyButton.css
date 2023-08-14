@@ -1,0 +1,13 @@
+.button {
+  background-color: transparent;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid purple;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: background-color .5s ease;
+}
+
+.button:hover {
+  background-color: purple;
+}
