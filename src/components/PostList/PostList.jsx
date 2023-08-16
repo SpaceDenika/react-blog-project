@@ -6,7 +6,7 @@ function PostList({ posts }) {
   return (
     <>
       {posts.map(post => (
-        <PostItem key={post.id} title={post.title} description="description" />
+        <PostItem key={post.id} title={post.title} body={post.body} />
       ))}
     </>
   )

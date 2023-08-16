@@ -1,7 +1,7 @@
 import React from 'react';
 import './PostItem.css';
 
-function PostItem({ title, description }) {
+function PostItem({ title, body }) {
 
 
   return (
@@ -10,7 +10,7 @@ function PostItem({ title, description }) {
         <h2 className="post__title">{title}</h2>
       </header>
       <section className="post__main">
-        <p className="post__text">{description}</p>
+        <p className="post__text">{body}</p>
       </section>
       {/* <section className="post__comments">
         <article className="post__comment">

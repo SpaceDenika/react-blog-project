@@ -13,12 +13,18 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [isPostFormOpen, setIsPostFormOpen] = useState(false);
 
+
   const closePopup = () => {
     setIsPostFormOpen(false);
   }
 
   const handleOpenPostFormClick = () => {
     setIsPostFormOpen(true);
+  }
+
+  const createPost = (newPost) => {
+    setPosts([newPost, ...posts]);
+    closePopup();
   }
   
   const fetchPosts = async () => {
@@ -38,6 +44,8 @@ function App() {
       <PostForm
         isOpen={isPostFormOpen}
         onClose={closePopup}
+        createPost={createPost}
+        btnText="Создать"
       />
       <PostList posts={posts} />
     </div>
