@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MyPopup from "../UI/popup/MyPopup";
 import MyInput from "../UI/input/MyInput";
 import MyButton from "../UI/button/MyButton";
+import MyTextarea from "../UI/textarea/MyTextarea";
 
 function PostForm({ isOpen, onClose, btnText, createPost }) {
 
@@ -28,7 +29,6 @@ function PostForm({ isOpen, onClose, btnText, createPost }) {
   return (
     <MyPopup
       title="Создание поста"
-
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={addNewPost}
@@ -41,7 +41,7 @@ function PostForm({ isOpen, onClose, btnText, createPost }) {
         value={post.title}
         onChange={handlePostTitleChange}
       />
-      <textarea onChange={handlePostBodyChange} value={post.body} type="text" className="form__input form__input_type_body" placeholder="Текст поста" minLength="5" maxLength="400" />
+      <MyTextarea onChange={handlePostBodyChange} value={post.body} className="form__input" placeholder="Текст поста" minLength="5" maxLength="400" />
       <MyButton className="form__btn">{btnText}</MyButton>
     </MyPopup>
   )

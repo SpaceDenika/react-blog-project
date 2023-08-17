@@ -1,11 +1,11 @@
 import React from 'react';
 import './PostItem.css';
 
-function PostItem({ title, body }) {
-
+function PostItem({ title, body, remove }) {
 
   return (
     <article className="post">
+      <button onClick={remove} className="post__remove"></button>
       <header className="post__header">
         <h2 className="post__title">{title}</h2>
       </header>
@@ -19,6 +19,7 @@ function PostItem({ title, body }) {
           <p className="post__comment-email">Email</p>
         </article>
       </section> */}
+
     </article>
   )
 }

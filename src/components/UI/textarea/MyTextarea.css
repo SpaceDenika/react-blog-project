@@ -1,0 +1,6 @@
+.textarea {
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  max-width: 100%;
+  border: 1px solid purple;
+}

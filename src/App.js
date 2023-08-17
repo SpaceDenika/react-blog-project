@@ -26,6 +26,10 @@ function App() {
     setPosts([newPost, ...posts]);
     closePopup();
   }
+
+  const removePost = (post) => {
+    setPosts(posts.filter(postItem => postItem.id !== post.id));
+  }
   
   const fetchPosts = async () => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -47,7 +51,7 @@ function App() {
         createPost={createPost}
         btnText="Создать"
       />
-      <PostList posts={posts} />
+      <PostList remove={removePost} posts={posts} />
     </div>
   );
 }

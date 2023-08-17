@@ -1,6 +1,7 @@
 @import url('../components/UI/popup/MyPopup.css');
 @import url('../components/UI/button/MyButton.css');
 @import url('../components/UI/input/MyInput.css');
+@import url('../components/UI/textarea/MyTextarea.css');
 @import url('../components/PostForm/PostForm.css');
 
 * {
