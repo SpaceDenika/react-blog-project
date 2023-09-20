@@ -14,7 +14,11 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+}
+
+.post__main {
+  margin-top: 15px;
 }

@@ -1,11 +1,15 @@
 import React from 'react';
 import './PostItem.css';
 
-function PostItem({ title, body, remove }) {
+function PostItem({ post, title, body, remove }) {
+
+  const handleRemovePostClick = () => {
+    remove(post);
+  }
 
   return (
     <article className="post">
-      <button onClick={remove} className="post__remove"></button>
+      <button onClick={handleRemovePostClick} className="post__remove"></button>
       <header className="post__header">
         <h2 className="post__title">{title}</h2>
       </header>

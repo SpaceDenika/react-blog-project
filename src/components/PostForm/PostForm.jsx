@@ -40,8 +40,20 @@ function PostForm({ isOpen, onClose, btnText, createPost }) {
         minLength="2"
         value={post.title}
         onChange={handlePostTitleChange}
+        required
+        name="title"
       />
-      <MyTextarea onChange={handlePostBodyChange} value={post.body} className="form__input" placeholder="Текст поста" minLength="5" maxLength="400" />
+      <MyTextarea 
+        name="body" 
+        required 
+        onChange={handlePostBodyChange} 
+        value={post.body} 
+        className="form__input" 
+        placeholder="Текст поста" 
+        minLength="5" 
+        maxLength="400"
+        rows="10"
+      />
       <MyButton className="form__btn">{btnText}</MyButton>
     </MyPopup>
   )

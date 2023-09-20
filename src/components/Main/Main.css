@@ -1,0 +1,14 @@
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__select {
+  margin-bottom: 10px;
+}
+
+.main__announcement {
+  font-size: 20px;
+}

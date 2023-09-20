@@ -4,8 +4,8 @@ import axios from "axios";
 import './styles/App.css';
 
 import Header from "./components/Header/Header";
-import PostList from "./components/PostList/PostList";
 import PostForm from "./components/PostForm/PostForm";
+import Main from "./components/Main/Main";
 
 
 function App() {
@@ -30,6 +30,10 @@ function App() {
   const removePost = (post) => {
     setPosts(posts.filter(postItem => postItem.id !== post.id));
   }
+
+  const sortPosts = (sort) => {
+    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
+  }
   
   const fetchPosts = async () => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -51,7 +55,11 @@ function App() {
         createPost={createPost}
         btnText="Создать"
       />
-      <PostList remove={removePost} posts={posts} />
+      <Main 
+        posts={posts} 
+        removePost={removePost}
+        sortPosts={sortPosts}
+      />
     </div>
   );
 }

@@ -8,7 +8,7 @@ function Header({ onPostForm }) {
   return (
     <header className="header">
       <div className="header__container">
-        <p className="header__title">Posts</p>
+        <h1 className="header__title">Posts</h1>
         <MyButton onClick={onPostForm}>Создать пост</MyButton>
       </div>
     </header>
