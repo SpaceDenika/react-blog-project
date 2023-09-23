@@ -1,25 +1,24 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import './styles/App.css';
 
 import Header from "./components/Header/Header";
 import PostForm from "./components/PostForm/PostForm";
-import Main from "./components/Main/Main";
+import PostList from "./components/PostList/PostList";
+import PostFilter from "./components/PostFilter/PostFilter";
+import { usePosts } from "./components/hooks/usePosts";
 
 
 function App() {
 
   const [posts, setPosts] = useState([]);
   const [isPostFormOpen, setIsPostFormOpen] = useState(false);
-
+  const [filter, setFilter] = useState({ sort: '', query: '' });
+  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
   const closePopup = () => {
     setIsPostFormOpen(false);
-  }
-
-  const handleOpenPostFormClick = () => {
-    setIsPostFormOpen(true);
   }
 
   const createPost = (newPost) => {
@@ -29,10 +28,6 @@ function App() {
 
   const removePost = (post) => {
     setPosts(posts.filter(postItem => postItem.id !== post.id));
-  }
-
-  const sortPosts = (sort) => {
-    setPosts([...posts].sort((a, b) => a[sort].localeCompare(b[sort])));
   }
   
   const fetchPosts = async () => {
@@ -47,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Header 
-        onPostForm={handleOpenPostFormClick}
+        onPostForm={setIsPostFormOpen}
       />
       <PostForm
         isOpen={isPostFormOpen}
@@ -55,10 +50,14 @@ function App() {
         createPost={createPost}
         btnText="Создать"
       />
-      <Main 
-        posts={posts} 
-        removePost={removePost}
-        sortPosts={sortPosts}
+      <PostFilter 
+        filter={filter}
+        setFilter={setFilter}
+      />
+      <PostList 
+        posts={sortedAndSearchedPosts}
+        title="Список постов" 
+        removePost={removePost} 
       />
     </div>
   );

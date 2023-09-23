@@ -5,7 +5,7 @@ function MySelect({ className, options, defaultValue, value, onChange }) {
   return (
     <select 
       value={value} 
-      onChange={e => onChange(e.target.value)} 
+      onChange={onChange} 
       name="sort" 
       className={className ? `select ${className}` : `select`}
     >

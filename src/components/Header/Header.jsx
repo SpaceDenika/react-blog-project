@@ -9,7 +9,7 @@ function Header({ onPostForm }) {
     <header className="header">
       <div className="header__container">
         <h1 className="header__title">Posts</h1>
-        <MyButton onClick={onPostForm}>Создать пост</MyButton>
+        <MyButton onClick={() => onPostForm(true)}>Создать пост</MyButton>
       </div>
     </header>
   )
