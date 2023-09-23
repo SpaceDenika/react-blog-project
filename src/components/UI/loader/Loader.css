@@ -1,0 +1,30 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader__text {
+  font-size: 20px;
+}
+
+.loader__animation {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px dashed blueviolet;
+  margin-top: 25px;
+  animation: loader 2s infinite linear;
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.4);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
