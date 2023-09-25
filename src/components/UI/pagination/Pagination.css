@@ -1,0 +1,21 @@
+.pagination {
+  max-width: 80%;
+  width: 100%;
+}
+
+.pagination__container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.page {
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  border: none;
+}
+
+.page__active {
+  font-weight: bold;
+}
