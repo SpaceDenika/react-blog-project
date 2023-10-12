@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 export const usePagination = (limitCount = 10) => {
   const [totalPages, setTotalPages] = useState(0);
@@ -15,7 +15,9 @@ export const usePagination = (limitCount = 10) => {
     }
   }
 
-  const pagesArray = Array.from({ length: totalPages }, (_, index) => index + 1);
+  const pagesArray = useMemo(() => {
+   return Array.from({ length: totalPages }, (_, index) => index + 1)
+  }, [totalPages]);
 
   return {
     totalPages,

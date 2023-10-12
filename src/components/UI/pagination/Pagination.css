@@ -13,9 +13,9 @@
   margin-right: 10px;
   width: 45px;
   height: 45px;
-  border: none;
 }
 
 .page__active {
   font-weight: bold;
+  background-color: purple;
 }

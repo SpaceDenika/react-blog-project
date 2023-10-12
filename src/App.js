@@ -11,9 +11,9 @@ import Pagination from "./components/UI/pagination/Pagination";
 import Loader from "./components/UI/loader/Loader";
 import Error from "./components/UI/error/Error";
 
-import usePosts from "./components/hooks/usePosts";
-import useFetching from "./components/hooks/useFetching";
-import usePagination from "./components/hooks/usePagination";
+import usePosts from "./hooks/usePosts";
+import useFetching from "./hooks/useFetching";
+import usePagination from "./hooks/usePagination";
 
 function App() {
 
